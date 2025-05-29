@@ -30,22 +30,28 @@ Fill Date Of Birth    ${day}    ${month}    ${year}
 
 Submit Practice Form
     [Arguments]    ${first}    ${last}    ${email}    ${gender}    ${mobile}    ${day}    ${month}    ${year}    ${subject}    ${hobby}    ${state}    ${city}
-    Open Browser    ${URL}    ${BROWSER}    options=add_argument(--start-maximized)
-    Input Text    /html/body/div[2]/div/div/div/div[2]/div[2]/form/div[1]/div[2]/input    ${first}
-    Input Text    /html/body/div[2]/div/div/div/div[2]/div[2]/form/div[1]/div[4]/input    ${last}
-    Input Text    /html/body/div[2]/div/div/div/div[2]/div[2]/form/div[2]/div[2]/input    ${email}
-    Click Element    //label[text()='${gender}']
-    Input Text    /html/body/div[2]/div/div/div/div[2]/div[2]/form/div[4]/div[2]/input    ${mobile}
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Sleep    2s
+    Input Text    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[1]/div[2]/input    ${first}
+    Input Text    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[1]/div[4]/input    ${last}
+    Input Text    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[2]/div[2]/input    ${email}
+    Click Element    xpath=//label[text()='${gender}']
+    Input Text    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[4]/div[2]/input   ${mobile}
+
+
     Fill Date Of Birth    ${day}    ${month}    ${year}
-    Input Text    /html/body/div[2]/div/div/div/div[2]/div[2]/form/div[6]/div[2]/div/div/div[1]    ${subject}
-    Press Keys    /html/body/div[1]/div/div/div[2]/div[2]/form/div[6]/div[2]/div/div/div[1]/div[1]/input    RETURN
-    Click Element    //label[text()='${hobby}']
-    Choose File    /html/body/div[1]/div/div/div[2]/div[2]/form/div[8]/div[2]/input    ${UPLOAD_PIC}
-    Input Text    /html/body/div[2]/div/div/div/div[2]/div[2]/form/div[9]/div[2]/textarea    Avenida Siempre Viva 123
-    Click Element    /html/body/div[1]/div/div/div[2]/div[2]/form/div[10]/div[2]/div/div[1]
-    Click Element    //div[text()='${state}']
-    Click Element    /html/body/div[1]/div/div/div[2]/div[2]/form/div[10]/div[3]/div/div[1]
-    Click Element    //div[text()='${city}']
-    Click Button    /html/body/div[1]/div/div/div[2]/div[2]/form/div[11]/div/button
+
+    
+    Input Text    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[6]/div[2]/div/div/div[1]    ${subject}
+    Press Keys    xpath=/html/body/div[1]/div/div/div[2]/div[2]/form/div[6]/div[2]/div/div/div[1]/div[1]/input    RETURN
+    Click Element    xpath=//label[text()='${hobby}']
+    Choose File    xpath=/html/body/div[1]/div/div/div[2]/div[2]/form/div[8]/div[2]/input    ${UPLOAD_PIC}
+    Input Text    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[9]/div[2]/textarea    Avenida Siempre Viva 123
+    Click Element    xpath=/html/body/div[1]/div/div/div[2]/div[2]/form/div[10]/div[2]/div/div[1]
+    Click Element    xpath=//div[text()='${state}']
+    Click Element    xpath=/html/body/div[1]/div/div/div[2]/div[2]/form/div[10]/div[3]/div/div[1]
+    Click Element    xpath=//div[text()='${city}']
+    Click Button    xpath=/html/body/div[1]/div/div/div[2]/div[2]/form/div[11]/div/button
     Wait Until Element Is Visible    //div[@id='example-modal-sizes-title-lg']
     Close Browser
