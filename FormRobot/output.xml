@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.0 on win32)" generated="2025-05-29T16:07:44.361016" rpa="false" schemaversion="5">
+<suite id="s1" name="Form" source="C:\Users\Usuario\Documents\SARA\UNIVERSIDAD\SEMESTRE 7\Pruebas\TrabajoRobot\form.ROBOT">
+<kw name="Start Suite Recording" type="SETUP">
+<kw name="Start Video Recording" owner="ScreenCapLibrary">
+<msg time="2025-05-29T16:07:47.282128" level="INFO">Automatically setting a fps of 12.0</msg>
+<doc>Starts the recording of a video in the background with the specified ``name``.
+The recording can be stopped by calling the `Stop Video Recording` keyword.</doc>
+<status status="PASS" start="2025-05-29T16:07:45.179218" elapsed="2.109347"/>
+</kw>
+<status status="PASS" start="2025-05-29T16:07:45.178574" elapsed="2.110146"/>
+</kw>
+<test id="s1-t1" name="Submit Practice Form" line="17">
+<msg time="2025-05-29T16:07:49.388936" level="INFO">Automatically setting a fps of 9.5</msg>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-29T16:07:49.542343" level="INFO" html="true">&lt;a href="recording_4.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_4.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Submit Practice Form</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-29T16:07:49.393111" elapsed="0.149375"/>
+</kw>
+<status status="FAIL" start="2025-05-29T16:07:47.288823" elapsed="2.103960">Test cannot be empty.</status>
+</test>
+<kw name="Stop Suite Recording" type="TEARDOWN">
+<kw name="Stop Video Recording" owner="ScreenCapLibrary">
+<msg time="2025-05-29T16:07:49.619182" level="INFO" html="true">&lt;a href="recording_3.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_3.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<doc>Stops the video recording corresponding to the given ``alias`` and generates the file in WebM format. If no
+``alias`` is specified, the last opened recording will be closed. If there are more recordings with the same
+alias all of them will be closed. If ``embed`` argument was set to
+``True`` the video will be displayed in the log file.
+Furthermore, if the ``save_to_disk`` parameter is set to ``False``, the video will be embedded and available in
+the log file only.</doc>
+<status status="PASS" start="2025-05-29T16:07:49.544260" elapsed="0.075041"/>
+</kw>
+<status status="PASS" start="2025-05-29T16:07:49.544054" elapsed="0.075364"/>
+</kw>
+<status status="FAIL" start="2025-05-29T16:07:44.362767" elapsed="5.256698"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Form" id="s1" pass="0" fail="1" skip="0">Form</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-29T16:07:45.166845" level="ERROR">[ DataDriver ] Error in robot file:
+  File "C:\Users\Usuario\Documents\SARA\UNIVERSIDAD\SEMESTRE 7\Pruebas\TrabajoRobot\form.ROBOT", line 0</msg>
+<msg time="2025-05-29T16:07:45.167367" level="ERROR">In source file:
+  File "students.csv", line 0</msg>
+<msg time="2025-05-29T16:07:45.172644" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: ValueError: Unassigned requiered argument detected: ${first}.</msg>
+</errors>
+</robot>
