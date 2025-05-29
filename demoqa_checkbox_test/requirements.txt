@@ -1,0 +1,5 @@
+robotframework
+robotframework-seleniumlibrary
+robotframework-datadriver
+robotframework-screencaplibrary
+robotframework-autorecorder
