@@ -8,11 +8,14 @@ Test Setup      Start Video Recording
 Test Teardown   Stop Video Recording
 Test Template   Automatizar Desplegable y Campos de Texto Template  # Add this line
 
+*** Variables ***
 ${URL}          https://demoqa.com/automation-practice-form
 ${BROWSER}      chrome
 
-Automatizar Desplegable y Campos de Texto 
+*** Test Cases ***
+Automatizar Desplegable y Campos de Texto  
 
+*** Keywords ***
 Automatizar Desplegable y Campos de Texto Template    [Arguments]    ${Nombre}    ${Correo}    ${Direccion1}    ${Direccion2}
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
