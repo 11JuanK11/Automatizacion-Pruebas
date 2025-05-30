@@ -1,3 +1,3 @@
 ${first};${last};${email};${gender};${mobile};${day};${month};${year};${subject};${hobby};${state};${city}
-Juan;Pérez;juan.perez@example.com;Male;3001234567;15;0;2000;Maths;Sports;NCR;Delhi
-María;Gómez;maria.gomez@example.com;Female;3019876543;23;11;1995;English;Music;Uttar Pradesh;Agra
+Juan;Perez;juan.perez@example.com;Male;3001234567;29;5;2000;Maths;Sports;NCR;Delhi
+Maria;Gomez;maria.gomez@example.com;Female;3019876543;29;4;1995;English;Music;Haryana;Panipat

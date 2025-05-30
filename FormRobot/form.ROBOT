@@ -22,36 +22,34 @@ Start Suite Recording
 Stop Suite Recording
     Stop Video Recording
 
-Fill Date Of Birth    ${day}    ${month}    ${year}
-    Click Element    /html/body/div[1]/div/div/div[2]/div[2]/form/div[5]/div[2]/div[1]/input
-    Select From List By Value    /html/body/div[2]/div/div[2]/div/div/select[1]    ${month}
-    Select From List By Value    /html/body/div[2]/div/div[2]/div/div/select[2]    ${year}
-    Click Element    //div[contains(@class,'react-datepicker__day') and normalize-space(text())='${day}']
-
 Submit Practice Form
-    [Arguments]    ${first}    ${last}    ${email}    ${gender}    ${mobile}    ${day}    ${month}    ${year}    ${subject}    ${hobby}    ${state}    ${city}
+    [Arguments]    ${first}    ${last}    ${email}    ${gender}    ${mobile}    ${day}  ${month}  ${year}    ${subject}    ${hobby}    ${state}    ${city}
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Sleep    2s
     Input Text    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[1]/div[2]/input    ${first}
+    Sleep    1s
     Input Text    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[1]/div[4]/input    ${last}
+    Sleep    1s
     Input Text    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[2]/div[2]/input    ${email}
+    Sleep    1s
     Click Element    xpath=//label[text()='${gender}']
+    Sleep    1s
     Input Text    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[4]/div[2]/input   ${mobile}
-
-
-    Fill Date Of Birth    ${day}    ${month}    ${year}
-
-    
-    Input Text    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[6]/div[2]/div/div/div[1]    ${subject}
-    Press Keys    xpath=/html/body/div[1]/div/div/div[2]/div[2]/form/div[6]/div[2]/div/div/div[1]/div[1]/input    RETURN
+    Sleep    1s
     Click Element    xpath=//label[text()='${hobby}']
-    Choose File    xpath=/html/body/div[1]/div/div/div[2]/div[2]/form/div[8]/div[2]/input    ${UPLOAD_PIC}
-    Input Text    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[9]/div[2]/textarea    Avenida Siempre Viva 123
-    Click Element    xpath=/html/body/div[1]/div/div/div[2]/div[2]/form/div[10]/div[2]/div/div[1]
+    Sleep    1s
+    Choose File    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[8]/div[2]/div/input    ${UPLOAD_PIC}
+    Sleep    1s
+    Input Text    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[9]/div[2]/textarea   Avenida Siempre Viva 123
+    Sleep    1s
+    Click Element    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[10]/div[2]/div/div/div[1]/div[1]
     Click Element    xpath=//div[text()='${state}']
-    Click Element    xpath=/html/body/div[1]/div/div/div[2]/div[2]/form/div[10]/div[3]/div/div[1]
+    Sleep    1s
+    Click Element    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[10]/div[3]/div/div/div[1]/div[1]
     Click Element    xpath=//div[text()='${city}']
-    Click Button    xpath=/html/body/div[1]/div/div/div[2]/div[2]/form/div[11]/div/button
+    Sleep    1s
+    Click Button    xpath=/html/body/div[2]/div/div/div/div[2]/div[2]/form/div[11]/div/button
+    Sleep    3s
     Wait Until Element Is Visible    //div[@id='example-modal-sizes-title-lg']
     Close Browser
