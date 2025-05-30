@@ -9,18 +9,6 @@ Suite Teardown    Stop Video Recording
 ${URL}            https://demoqa.com/checkbox
 
 *** Test Cases ***
-Seleccionar checkbox Desktop
-    [Tags]    Desktop
-    Close All Browsers
-    Open Browser    ${URL}    chrome
-    Maximize Browser Window
-    Wait Until Element Is Visible    css=button.rct-option-expand-all    timeout=10s
-    Click Element With JS    button.rct-option-expand-all
-    Sleep    1s
-    Click Element    xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/span/label/span[1]        # Desktop
-    Sleep    3s
-    Capture Page Screenshot
-    Close Browser
 
 Seleccionar checkboxes Notes y Commands
     [Tags]    NotesCommands
@@ -53,6 +41,26 @@ Seleccionar checkboxes React, Angular y Veu
     Sleep    3s
     Capture Page Screenshot
     Close Browser
+
+Seleccionar checkboxes Public, Private, Classified y General
+    [Tags]    PublicPrivateClassifiedGeneral
+    Close All Browsers
+    Open Browser    ${URL}    chrome
+    Maximize Browser Window
+    Wait Until Element Is Visible    css=button.rct-option-expand-all    timeout=10s
+    Click Element With JS    button.rct-option-expand-all
+    Sleep    1s
+    Click Element    xpath=//*[@id="tree-node-public"]/../span[@class="rct-checkbox"]         # Public
+    Sleep    2s
+    Click Element    xpath=//*[@id="tree-node-private"]/../span[@class="rct-checkbox"]        # Private
+    Sleep    2s
+    Click Element    xpath=//*[@id="tree-node-classified"]/../span[@class="rct-checkbox"]     # Classified
+    Sleep    2s
+    Click Element    xpath=//*[@id="tree-node-general"]/../span[@class="rct-checkbox"]        # General
+    Sleep    3s
+    Capture Page Screenshot
+    Close Browser
+
 
 
 *** Keywords ***
