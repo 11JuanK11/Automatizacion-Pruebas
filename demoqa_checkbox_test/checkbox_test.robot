@@ -18,7 +18,7 @@ Seleccionar checkbox Desktop
     Click Element With JS    button.rct-option-expand-all
     Sleep    1s
     Click Element    xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/span/label/span[1]        # Desktop
-    Sleep    1s
+    Sleep    3s
     Capture Page Screenshot
     Close Browser
 
@@ -31,10 +31,29 @@ Seleccionar checkboxes Notes y Commands
     Click Element With JS    button.rct-option-expand-all
     Sleep    1s
     Click Element    xpath=//*[@id="tree-node-notes"]/../span[@class="rct-checkbox"]     # Notes
+    Sleep    2s
     Click Element    xpath=//*[@id="tree-node-commands"]/../span[@class="rct-checkbox"]  # Commands
-    Sleep    1s
+    Sleep    3s
     Capture Page Screenshot
     Close Browser
+
+Seleccionar checkboxes React, Angular y Veu
+    [Tags]    ReactAngularVeu
+    Close All Browsers
+    Open Browser    ${URL}    chrome
+    Maximize Browser Window
+    Wait Until Element Is Visible    css=button.rct-option-expand-all    timeout=10s
+    Click Element With JS    button.rct-option-expand-all
+    Sleep    1s
+    Click Element    xpath=//*[@id="tree-node-react"]/../span[@class="rct-checkbox"]       # React
+    Sleep    2s
+    Click Element    xpath=//*[@id="tree-node-angular"]/../span[@class="rct-checkbox"]     # Angular
+    Sleep    2s
+    Click Element    xpath=//*[@id="tree-node-veu"]/../span[@class="rct-checkbox"]         # Veu
+    Sleep    3s
+    Capture Page Screenshot
+    Close Browser
+
 
 *** Keywords ***
 Click Element With JS
