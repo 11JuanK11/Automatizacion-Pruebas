@@ -44,6 +44,8 @@ Probar Agregar y Validar Registro
     Input Text       id=department    Edited_${department}
     Ejecutar Click Seguro    id=submit
     
+    Capture Page Screenshot 
+    
     # Validate edit
     Validate Table Cell    ${row_xpath}    6    Edited_${department}
 
